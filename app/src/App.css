@@ -1,0 +1,10 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: white;
+  font-family: Trebuchet MS,roboto,ubuntu,sans-serif;
+  font-size: 14px;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  min-width: 320px;
+}

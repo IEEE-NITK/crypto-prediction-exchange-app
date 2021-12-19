@@ -1,0 +1,70 @@
+.tv-header__area--user {
+    align-items: center;
+    display: flex;
+}
+
+.tv-header__area {
+    flex-shrink: 0;
+    margin-right: 40px;
+}
+
+
+.tv-header__user-menu-button {
+    outline: none;
+    overflow: visible;
+    position: relative;
+}
+
+.tv-header__user-menu-button:hover{
+    background-color: #2e3342;
+}
+
+.tv-header__user-menu-button {
+    align-items: center;
+    background: none;
+    border: 0;
+    border-radius: 32px;
+    cursor: pointer;
+    color: inherit;
+    font: inherit;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.tv-header__user-menu-button--anonymous {
+    flex-direction: column;
+    height: 40px;
+    padding-bottom: 2px;
+    width: 40px;
+}
+
+#user_logo{
+    width: 28px;
+    height: 28px;
+}
+
+.tv-header__offer-button-container {
+    display: flex;
+    margin-left: 16px;
+}
+
+.tv-header__offer-button-container {
+    display: flex;
+    margin-left: 16px;
+}
+
+.tv-header__offer-button {
+    background-color: #2962ff;
+    border-radius: 24px;
+    box-sizing: border-box;
+    color: #fff;
+    display: inline-block;
+    font-size: 16px;
+    height: 40px;
+    line-height: 24px;
+    padding: 8px 16px;
+    text-align: center;
+    transition: background-color .35s ease;
+    vertical-align: middle;
+}
