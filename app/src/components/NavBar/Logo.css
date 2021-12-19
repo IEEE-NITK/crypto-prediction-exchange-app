@@ -1,0 +1,13 @@
+.tv-header__logo {
+    display: inline-block;
+    font-size: 0;
+    vertical-align: middle;
+}
+
+.tv-header__link--logo {
+    align-items: center;
+    border: none;
+    display: flex;
+    height: 40px;
+    position: relative;
+}
