@@ -1,0 +1,75 @@
+.header-search-bar {
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    justify-content: center;
+}
+
+.header-search-input-container {
+    background-color: #2a2e39;
+    color: #787b86;
+    align-items: center;
+    background-color: #f0f3fa;
+    border-radius: 40px;
+    box-sizing: border-box;
+    color: #787b86;
+    display: flex;
+    height: 33px;
+    justify-content: space-between;
+    padding: 4px;
+}
+
+.form-container {
+    align-items: center;
+    background-color: rgb(240, 243, 250);
+    border-radius: 40px;
+    box-sizing: border-box;
+    color: rgb(120, 123, 134);
+    display: flex;
+    height: 30px;
+    justify-content: space-between;
+    padding: 4px;
+}
+
+.iconedButton {
+    align-items: center;
+    border-radius: 50%;
+    display: flex;
+    height: 32px;
+    justify-content: center;
+    outline: none;
+    overflow: visible;
+    padding: 0px;
+    position: relative;
+    width: 32px;
+    border: none;
+}
+
+.input-search {
+    background-color: initial;
+    border: none;
+    color: rgb(19, 23, 34);
+    flex: 1 1 auto;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.input-search:focus{
+    outline: none;
+}
+
+.search-bar{
+    display: flex;
+    background-color: #131722;
+}
+
+.list-sort{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-sort-item{
+    padding: 0px 25px 8px 25px;
+}
