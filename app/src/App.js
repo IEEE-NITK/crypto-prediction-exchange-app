@@ -1,13 +1,13 @@
 import './App.css';
 import Footer from './components/Footer/Footer';
-import Main from './components/exchange/Main/Main';
 import NavBar from './components/NavBar/NavBar';
+import Exchange from './components/exchange/Exchange';
 
 function App() {
   return (
     <div className="App">
       <NavBar/>
-      <Main/>
+      <Exchange/>
       <Footer/>
     </div>
   );

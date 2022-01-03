@@ -7,6 +7,9 @@
     padding: 0 32px;
     position: relative;
     background-color: #131722;
+    border-bottom-style: solid;
+    border-color: white;
+    border-width: 0.2px;
 }
 
 
