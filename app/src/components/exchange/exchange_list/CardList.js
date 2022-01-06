@@ -4,6 +4,7 @@ import Card from './Card'
 const CardList = () => {
     const [coins, setCoins] = useState([])
     var axios = require("axios").default;
+    console.log(process.env.X_RAPID_API_KEY)
 
     var options = {
     method: 'GET',
@@ -11,7 +12,7 @@ const CardList = () => {
     params: {vs_currency: 'inr', page: '1', per_page: '100', order: 'market_cap_desc'},
     headers: {
         'x-rapidapi-host': 'coingecko.p.rapidapi.com',
-        'x-rapidapi-key': 'c5e2097ab3mshcb4d461a0617cb5p1b05e0jsndb394edbe645'
+        'x-rapidapi-key': process.env.X_RAPID_API_KEY
     }
     };
     
