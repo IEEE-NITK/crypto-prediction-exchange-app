@@ -11,15 +11,17 @@ A web application that allows users to view real-time prices for over 200 crypto
 -   Pseudo Exchange of crypto
 -   User authentication, user dashborad for keeping track of profit/loss
 
-## Demo
-
-Insert gif or link to demo
-
 ## Tech Stack
 
 **Client:** React, React SDK, TailwindCSS
 
 **Server:** Node, Express, MongoDB, Axios, Binance API, CoinGecko API, Trading View Carts
+
+## Screenshots
+
+#### Homepage
+
+![App Screenshot](./assets/img.png)
 
 ## Environment Variables
 
@@ -46,16 +48,6 @@ Start the server of both frontend and backend
 ```bash
   npm start
 ```
-
-## Screenshots
-
-#### Homepage
-
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-
-#### Search functionality along with filters
-
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
 ## Roadmap
 
