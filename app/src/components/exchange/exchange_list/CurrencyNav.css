@@ -12,7 +12,6 @@
     background-color: #f0f3fa;
     border-radius: 40px;
     box-sizing: border-box;
-    color: #787b86;
     display: flex;
     height: 33px;
     justify-content: space-between;
@@ -66,10 +65,29 @@
 
 .list-sort{
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
+    margin-top:2px;
+    margin-bottom: 8px;
+    padding-left: 45px;
 }
 
-.list-sort-item{
-    padding: 0px 25px 8px 25px;
+.list-sort-item-pair{
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+.list-sort-item-vol{
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+.list-sort-item-change{
+    /* padding-right: 40px; */
+    cursor: pointer;
+}
+
+.arrow {
+    color: white;
+    font-size: 9px;
 }

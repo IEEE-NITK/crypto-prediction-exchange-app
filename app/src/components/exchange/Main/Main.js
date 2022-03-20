@@ -1,10 +1,18 @@
 import React from 'react'
+import Chart from './Chart'
+import "./Main.css"
 
 const Main = () => {
     return (
-        <div>
-            <h1>Main</h1>
-        </div>
+        <>
+                <div className='main-container'>
+                    <Chart/>
+                </div>
+            {/* {
+            width > 1000 && (
+            )
+            } */}
+        </>
     )
 }
 

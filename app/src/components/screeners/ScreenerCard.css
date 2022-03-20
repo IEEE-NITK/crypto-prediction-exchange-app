@@ -1,0 +1,21 @@
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+    border-radius: 8px;
+}
+
+td {
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+tr:hover{
+    background: #1e222d;
+    border-color: #1e222d;
+}
+
+
+.market-rating {
+    text-align: center;
+}
