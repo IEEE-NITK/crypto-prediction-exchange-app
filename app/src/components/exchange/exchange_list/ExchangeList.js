@@ -8,7 +8,6 @@ const ExchangeList = () => {
   return (
     <div className="exchange-list">
         <CurrencyNav/>
-        <CardList />
     </div>
   );
 };

@@ -16,19 +16,28 @@
     line-height: 21px;
     min-width: 28px;
     padding: 0 8px;
+    margin-right: 5px;
 }
 
 .btn{
     align-items: center;
     background: none;
+    cursor: pointer;
     border: none;
     border-radius: 6px;
     color: #d1d4dc;
-    cursor: default;
     display: inline-flex;
     justify-content: center;
 }
 
 .btn:hover{
+    background: #2a2e39;
+}
+
+/* .btn:focus{
+    background: #2a2e39;
+} */
+
+.btn-clicked{
     background: #2a2e39;
 }

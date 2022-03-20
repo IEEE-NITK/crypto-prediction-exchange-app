@@ -1,7 +1,66 @@
-# Cryptocurrency Price Prediction & Exchange App
-#### IEEE diode project
+# CryptoVerse
 
+-   A cryptocurrency price prediction & Exchange App
 
-An accurate crypto price prediction model plays a key role in business planning, but at the same time, it is a challenging task. By analyzing the historical prices using a knowledge-based system and machine learning, one can analyze the crypto market cycle.
+A web application that allows users to view real-time prices for over 200 cryptocurrencies as well as conduct a pseudo-exchange. Users will be able to place false orders (orders without paying money) and see how much profit or loss they would have made if they had completed the trade. The webapp has a personal dashborad for each user to keep track of all the coins in their wallet. Furthermore, it provides indicators for each cryptocurrency backed by our LSTM models in order to forecast the best time to buy or sell the cryptocurrency.
 
-In this project, we will be developing a cryptocurrency exchange app and predicting the prices in realtime using Natural Language processing.
+## Features
+
+-   Live prices & charts of over 200 cryptocurrencies
+-   Buy/Sell indicators for each cryptocurrency built on LSTM model
+-   Pseudo Exchange of crypto
+-   User authentication, user dashborad for keeping track of profit/loss
+
+## Demo
+
+Insert gif or link to demo
+
+## Tech Stack
+
+**Client:** React, React SDK, TailwindCSS
+
+**Server:** Node, Express, MongoDB, Axios, Binance API, CoinGecko API, Trading View Carts
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`COINGECKO_API_KEY`
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/predator4hack/crypto-prediction-exchange-app.git
+```
+
+Go to the project directory and install dependencies
+
+```bash
+  cd crypto-prediction-exchange-app/app
+```
+
+Start the server of both frontend and backend
+
+```bash
+  npm start
+```
+
+## Screenshots
+
+#### Homepage
+
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
+#### Search functionality along with filters
+
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
+## Roadmap
+
+-   Add user dashboard
+
+## Authors
+
+-   [@predator4hack](https://github.com/predator4hack)

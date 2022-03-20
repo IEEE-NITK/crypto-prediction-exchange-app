@@ -17,8 +17,25 @@
     background: #1e222d;
 }
 
+.market-name {
+    padding-bottom: 3px;
+}
+
+.market-name-text {
+    font-weight: bold;
+}
+
 .market-name-text:hover{
     color: #2861fc;
+}
+
+.market-change{
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.price-text {
+    font-weight: bold;
 }
 
 .currency-logo {
@@ -32,9 +49,14 @@
 }
 
 .market {
+    width: 50%;
     padding-right: 60px;
 }
-/* .c-logo {
-    width: 40px;
-    height: 40px;
-} */
+
+.green {
+    color: rgb(65, 255, 65);
+}
+
+.red {
+    color: rgb(255, 25, 25);
+}
