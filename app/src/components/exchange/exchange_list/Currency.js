@@ -1,34 +1,101 @@
-import React, { useState } from 'react'
-import "./Currency.css"
+import React, { useContext, useState } from "react";
+import { CoinContext } from "../Exchange";
+import "./Currency.css";
 
-const Currency = (props) => {
-    const [clicked, setClicked] = useState(2)
+const Currency = () => {
+    const coinContext = useContext(CoinContext);
+    const [clicked, setClicked] = useState(3);
     return (
-        <div className='currency-container'>
+        <div className="currency-container">
             <div className="currency-button">
-                <button className={"btn small-btn" + (clicked === 1 ? ' btn-clicked' : '')} onClick={() => {
-                    props.onChange('inr')
-                    setClicked('1')
-                    }}>⭐</button>
-                <button className={"btn small-btn" + (clicked === 2 ? ' btn-clicked' : '')}  onClick={() => {
-                    props.onChange('inr')
-                    setClicked('2')
-                    }}>INR</button>
-                <button className={"btn small-btn" + (clicked === 3 ? ' btn-clicked' : '')}  onClick={() => {
-                    props.onChange('usd')
-                    setClicked('3')
-                    }}>USD</button>
-                <button className={"btn small-btn" + (clicked === 4 ? ' btn-clicked' : '')}  onClick={() => {
-                    props.onChange('btc')
-                    setClicked('4')
-                    }}>BTC</button>
-                <button className={"btn small-btn" + (clicked === 5 ? ' btn-clicked' : '')}  onClick={() => {
-                    props.onChange('eth')
-                    setClicked('5')
-                    }}>ETH</button>
+                <button
+                    className={"btn small-btn"}
+                    style={{
+                        backgroundColor:
+                            coinContext.activeCoin.currency === "FAV"
+                                ? "#2a2e39"
+                                : "",
+                    }}
+                    onClick={() =>
+                        coinContext.dispatchActiveCoin({
+                            type: "currency",
+                            value: "FAV",
+                        })
+                    }
+                >
+                    ⭐
+                </button>
+                <button
+                    className={"btn small-btn"}
+                    style={{
+                        backgroundColor:
+                            coinContext.activeCoin.currency === "INR"
+                                ? "#2a2e39"
+                                : "",
+                    }}
+                    onClick={() =>
+                        coinContext.dispatchActiveCoin({
+                            type: "currency",
+                            value: "INR",
+                        })
+                    }
+                >
+                    INR
+                </button>
+                <button
+                    className={"btn small-btn"}
+                    style={{
+                        backgroundColor:
+                            coinContext.activeCoin.currency === "USD"
+                                ? "#2a2e39"
+                                : "",
+                    }}
+                    onClick={() =>
+                        coinContext.dispatchActiveCoin({
+                            type: "currency",
+                            value: "USD",
+                        })
+                    }
+                >
+                    USD
+                </button>
+                <button
+                    className={"btn small-btn"}
+                    style={{
+                        backgroundColor:
+                            coinContext.activeCoin.currency === "BTC"
+                                ? "#2a2e39"
+                                : "",
+                    }}
+                    onClick={() =>
+                        coinContext.dispatchActiveCoin({
+                            type: "currency",
+                            value: "BTC",
+                        })
+                    }
+                >
+                    BTC
+                </button>
+                <button
+                    className={"btn small-btn"}
+                    style={{
+                        backgroundColor:
+                            coinContext.activeCoin.currency === "ETH"
+                                ? "#2a2e39"
+                                : "",
+                    }}
+                    onClick={() =>
+                        coinContext.dispatchActiveCoin({
+                            type: "currency",
+                            value: "ETH",
+                        })
+                    }
+                >
+                    ETH
+                </button>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Currency
+export default Currency;
