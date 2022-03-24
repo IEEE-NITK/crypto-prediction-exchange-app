@@ -1,11 +1,16 @@
-import React from 'react'
+import React from "react";
+import TechAnalysisWidget from "./TechAnalysisWidget";
+import "./Orders.css";
 
 const Orders = () => {
     return (
-        <div>
-            <h1 style={{color:"black"}}>Orders Executed</h1>
-        </div>
-    )
-}
+        <>
+            <div className="orders-container">
+                <h1 style={{ color: "black" }}>Orders Executed</h1>
+                <TechAnalysisWidget />
+            </div>
+        </>
+    );
+};
 
-export default Orders
+export default Orders;

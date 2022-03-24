@@ -1,6 +1,25 @@
-*.i
-*.ii
-*.gpu
-*.ptx
-*.cubin
-*.fatbin
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/backend/node_modules
+/app/node_modules
+/.pnp
+.pnp.js
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+/app/.env
+/backend/.env
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

@@ -1,14 +1,16 @@
-import React from 'react'
-import ScreenerCard from './ScreenerCard'
-import './Screener.css'
+import React from "react";
+// import ScreenerCard from "./ScreenerCard";
+import "./Screener.css";
+import CryptoMarket from "./CryptoMarket";
 
 const Screener = () => {
     return (
-        <div className='screener'>
-            <div className='screener-title'>
+        <div className="screener">
+            <div className="screener-title">
                 <h1>Crypto Screener</h1>
             </div>
-            <div className="table">
+            <CryptoMarket />
+            {/* <div className="table">
                 <table className='screener-table czTsgW'>
                     <colgroup>
                         <col/>
@@ -88,9 +90,9 @@ const Screener = () => {
                         <ScreenerCard/>
                     </tbody>
                 </table>
-            </div>
+            </div> */}
         </div>
-    )
-}
+    );
+};
 
-export default Screener
+export default Screener;
