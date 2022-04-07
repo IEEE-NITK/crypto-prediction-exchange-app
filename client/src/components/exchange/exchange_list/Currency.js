@@ -1,10 +1,16 @@
 import React, { useContext, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setCoin } from "../../../actions/currencyActions";
 import { CoinContext } from "../Exchange";
 import "./Currency.css";
 
 const Currency = () => {
     const coinContext = useContext(CoinContext);
-    const [clicked, setClicked] = useState(3);
+    const coin = useSelector((state) => state.coin);
+    // console.log(coin);
+    // const dispatch = useDispatch();
+    // dispatch(setCoin("eth"));
+    // console.log(coin);
     return (
         <div className="currency-container">
             <div className="currency-button">
@@ -12,18 +18,18 @@ const Currency = () => {
                     className={"btn small-btn"}
                     style={{
                         backgroundColor:
-                            coinContext.activeCoin.currency === "FAV"
+                            coinContext.activeCoin.currency === "USDT"
                                 ? "#2a2e39"
                                 : "",
                     }}
                     onClick={() =>
                         coinContext.dispatchActiveCoin({
                             type: "currency",
-                            value: "FAV",
+                            value: "USDT",
                         })
                     }
                 >
-                    ⭐
+                    USDT
                 </button>
                 <button
                     className={"btn small-btn"}

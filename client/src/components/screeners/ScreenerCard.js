@@ -1,10 +1,10 @@
-import React from 'react'
-import "./ScreenerCard.css"
+import React from "react";
+import "./ScreenerCard.css";
 
 const ScreenerCard = () => {
     return (
         <tr>
-            <td>
+            {/* <td>
                 <span className="sc-80eeb0-1 iuAjRY">
                     <span className="icon-Star"></span>
                     ⭐
@@ -12,11 +12,16 @@ const ScreenerCard = () => {
             </td>
             <td style={{textAlign:"left"}}>
                 <p color="text2" font-size="0" class="sc-1eb5slv-0 ejtSnS">1</p>
-            </td>
-            <td style={{textAlign:"left"}}>
-                <div className='escjiH'>
+            </td> */}
+            <td style={{ textAlign: "left" }}>
+                <div className="escjiH">
                     <div className="dBKWCw">
-                        <img class="coin-logo" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" loading="lazy" alt="BTC logo"/>
+                        <img
+                            class="coin-logo"
+                            src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
+                            loading="lazy"
+                            alt="BTC logo"
+                        />
                     </div>
                     <div className="name">
                         <span className="name-text">Avalanche AVAX</span>
@@ -28,7 +33,7 @@ const ScreenerCard = () => {
                     <span>25gdgyethe4324</span>
                 </div>
             </td>
-            <td style={{textAlign:"right"}}>
+            {/* <td style={{textAlign:"right"}}>
                 <span className='last24'>
                     <span className='icon-caret-up'>
                     <i className='icon'>I</i>
@@ -58,9 +63,9 @@ const ScreenerCard = () => {
                     </span>
                     SELL
                 </span>
-            </td>
+            </td> */}
         </tr>
-    )
-}
+    );
+};
 
-export default ScreenerCard
+export default ScreenerCard;

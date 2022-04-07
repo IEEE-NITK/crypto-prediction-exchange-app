@@ -1,8 +1,9 @@
-import React, { useReducer } from "react";
+import React, { useContext, useReducer } from "react";
 import ExchangeList from "./exchange_list/ExchangeList";
 import Main from "./Main/Main";
 import Orders from "./orders/Orders";
 import "./Exchange.css";
+// import { useWebSocketContext } from "../../contextApis";
 
 export const CoinContext = React.createContext();
 
@@ -23,7 +24,8 @@ const reducer = (state, action) => {
 
 const Exchange = () => {
     const [activeCoin, dispatchActiveCoin] = useReducer(reducer, initialState);
-
+    // const websocketContext = useContext(useWebSocketContext);
+    // console.log(websocketContext);
     return (
         <CoinContext.Provider value={{ activeCoin, dispatchActiveCoin }}>
             <div className="exchange-component">

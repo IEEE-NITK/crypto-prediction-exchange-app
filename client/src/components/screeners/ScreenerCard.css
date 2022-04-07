@@ -10,11 +10,10 @@ td {
     vertical-align: inherit;
 }
 
-tr:hover{
+/* tr:hover {
     background: #1e222d;
     border-color: #1e222d;
-}
-
+} */
 
 .market-rating {
     text-align: center;

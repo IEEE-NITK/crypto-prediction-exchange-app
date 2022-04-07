@@ -25,6 +25,7 @@
     },
     "homepage": "https://github.com/predator4hack/crypto-prediction-exchange-app#readme",
     "dependencies": {
+        "axios": "^0.26.1",
         "bcryptjs": "^2.4.3",
         "body-parser": "^1.19.2",
         "concurrently": "^7.0.0",

@@ -1,13 +1,13 @@
 import React from "react";
 import "./Book.css";
-import OrderCard from "./OrderCard";
+import TradeCard from "./TradeCard";
 
-const OrderBook = () => {
+const TradeBook = () => {
     return (
         <>
             <div className="book-container">
                 <div className="book-title">
-                    <h5 style={{ margin: "10px" }}>Order Book</h5>
+                    <h5 style={{ margin: "10px" }}>Trade Book</h5>
                 </div>
                 <div className="book-table">
                     <table className="book-table">
@@ -33,51 +33,35 @@ const OrderBook = () => {
                                     maxWidth: "auto",
                                 }}
                             />
-                            <col
-                                style={{
-                                    width: "300px",
-                                    minWidth: "auto",
-                                    maxWidth: "auto",
-                                }}
-                            />
                         </colgroup>
                         <thead>
-                            <th className="book-stickyTop">
+                            <th
+                                className="book-stickyTop"
+                                style={{ textAlign: "right" }}
+                            >
                                 <div className="book-heading">
-                                    <div className="book-gbtfIe">
-                                        <p className="book-hJMpdk">VOLUME</p>
+                                    <div className="gbtfIe">
+                                        <p className="hJMpdk">PRICE</p>
                                     </div>
                                 </div>
                             </th>
                             <th className="book-stickyTop">
-                                <div className="book-pEXWP">
-                                    <div className="book-gbtfIe">
-                                        <p className="book-hJMpdk">BUY PRICE</p>
+                                <div className="pEXWP">
+                                    <div className="gbtfIe">
+                                        <p className="hJMpdk">VOLUME</p>
                                     </div>
                                 </div>
                             </th>
                             <th className="book-stickyTop">
-                                <div
-                                    className="book-heading"
-                                    style={{ justifyContent: "flex-start" }}
-                                >
-                                    <div className="book-gbtfIe">
-                                        <p className="book-hJMpdk">
-                                            SELL PRICE
-                                        </p>
-                                    </div>
-                                </div>
-                            </th>
-                            <th className="book-stickyTop">
-                                <div className="book-pEXWP">
-                                    <div className="book-gbtfIe">
-                                        <p className="book-hJMpdk">VOLUME</p>
+                                <div className="pEXWP">
+                                    <div className="gbtfIe">
+                                        <p className="hJMpdk">TIME</p>
                                     </div>
                                 </div>
                             </th>
                         </thead>
                         <tbody>
-                            <OrderCard />
+                            <TradeCard />
                         </tbody>
                     </table>
                 </div>
@@ -86,4 +70,4 @@ const OrderBook = () => {
     );
 };
 
-export default OrderBook;
+export default TradeBook;

@@ -1,23 +1,23 @@
-body{
-    --table-row-hover-background-color: rgb(23,25,36);
-    --table-background-color: rgb(23,23,26);
-    --table-divider-color: rgb(34,37,49);
+body {
+    --table-row-hover-background-color: rgb(23, 25, 36);
+    --table-background-color: rgb(23, 23, 26);
+    --table-divider-color: rgb(34, 37, 49);
 }
 
-.screener {
+/* .screener {
     padding-left: 150px;
     padding-right: 150px;
-}
+} */
 
-.screener-title {
+/* .screener-title {
     padding: 20px 0 20px 0;
-}
+} */
 
 .table {
     display: block;
 }
 
-.screener-table{
+.screener-table {
     margin: auto;
     font-size: 14px;
     width: 100%;
@@ -57,7 +57,7 @@ th {
     -webkit-box-align: center;
     align-items: center;
     -webkit-box-pack: start;
-    justify-content: flex-start;
+    justify-content: flex-end;
 }
 
 .gbtfIe {
@@ -114,7 +114,7 @@ th {
 .dBKWCw .coin-logo {
     height: 24px;
     width: 24px;
-    border-radius:12px;
+    border-radius: 12px;
 }
 
 .market-name {
@@ -131,7 +131,7 @@ th {
     align-items: flex-start;
 }
 
-.name-text{
+.name-text {
     line-height: 1.5;
     margin: 0px;
     color: rgb(255, 255, 255);
@@ -155,8 +155,8 @@ p {
 
 .price {
     color: var(--text-color);
+    text-align: end;
 }
-
 
 .kAXKAX {
     white-space: nowrap;
