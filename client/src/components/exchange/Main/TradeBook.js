@@ -7,14 +7,14 @@ const TradeBook = () => {
         <>
             <div className="book-container">
                 <div className="book-title">
-                    <h5 style={{ margin: "10px" }}>Trade Book</h5>
+                    <h4 style={{ margin: "10px" }}>Trade Book</h4>
                 </div>
                 <div className="book-table">
                     <table className="book-table">
                         <colgroup>
                             <col
                                 style={{
-                                    width: "300px",
+                                    width: "200px",
                                     minWidth: "auto",
                                     maxWidth: "auto",
                                 }}
@@ -35,11 +35,11 @@ const TradeBook = () => {
                             />
                         </colgroup>
                         <thead>
-                            <th
-                                className="book-stickyTop"
-                                style={{ textAlign: "right" }}
-                            >
-                                <div className="book-heading">
+                            <th className="book-stickyTop">
+                                <div
+                                    className="book-heading"
+                                    style={{ justifyContent: "flex-start" }}
+                                >
                                     <div className="gbtfIe">
                                         <p className="hJMpdk">PRICE</p>
                                     </div>

@@ -1,26 +1,39 @@
 import React, { useContext } from "react";
 import { WebSocketContext } from "../../../contextApis";
-import "./Card.css";
 
-var tradeData = [];
-var sliceTradeData;
+var askSlice;
+var appendData = [];
 
-const TradeCard = () => {
-    const { binanceTradeValue } = useContext(WebSocketContext);
-    tradeData.push(binanceTradeValue);
-    sliceTradeData = tradeData.slice(-8);
-    console.log(sliceTradeData);
+const Ask = () => {
+    const { binanceCoins } = useContext(WebSocketContext);
+    var askData = binanceCoins.a;
+    appendData.push(askData);
+
+    if (appendData !== undefined) {
+        askSlice = appendData.slice(-8);
+        askSlice.reverse();
+    }
     return (
         <>
-            {sliceTradeData !== undefined
-                ? sliceTradeData.map((data, index) => {
-                      var date = new Date(data.E);
-                      var time = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+            {askSlice !== undefined
+                ? askSlice.map((data, index) => {
+                      var price =
+                          data !== undefined
+                              ? data[0] !== undefined
+                                  ? +data[0][0]
+                                  : 0
+                              : 0;
+                      var amount =
+                          data !== undefined
+                              ? data[0] !== undefined
+                                  ? +data[0][1]
+                                  : 0
+                              : 0;
                       return (
                           <tr
                               key={index}
                               className="book-tr"
-                              style={{ color: data.m ? "red" : "green" }}
+                              style={{ color: "green" }}
                           >
                               <td
                                   className="book-td"
@@ -34,19 +47,14 @@ const TradeCard = () => {
                                           }}
                                       >
                                           <span className="book-name-text">
-                                              {data.p}
+                                              {amount}
                                           </span>
                                       </div>
                                   </div>
                               </td>
                               <td className="book-td">
                                   <div className="price">
-                                      <span>{data.q}</span>
-                                  </div>
-                              </td>
-                              <td className="book-td">
-                                  <div className="price">
-                                      <span>{time}</span>
+                                      <span>{price}</span>
                                   </div>
                               </td>
                           </tr>
@@ -57,4 +65,4 @@ const TradeCard = () => {
     );
 };
 
-export default TradeCard;
+export default Ask;

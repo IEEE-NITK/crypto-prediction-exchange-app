@@ -1,7 +1,11 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { TechnicalAnalysis } from "react-tradingview-embed";
 
 const TechAnalysisWidget = () => {
+    const currentCoin = useSelector((state) => state.data.coin);
+    const currentCurrency = useSelector((state) => state.data.currency);
+
     return (
         <>
             <div className="analysis">
@@ -12,7 +16,7 @@ const TechAnalysisWidget = () => {
                         height: "100%",
                         isTransparent: false,
                         height: 450,
-                        symbol: "COINBASE:BTCUSD",
+                        symbol: `COINBASE:${currentCoin}${currentCurrency}`,
                         showIntervalTabs: true,
                         locale: "en",
                         colorTheme: "dark",

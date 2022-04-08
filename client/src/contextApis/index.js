@@ -1,62 +1,80 @@
 import React, { createContext, useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 export const WebSocketContext = createContext();
 
-const cryptoData = require("./cryptocurrency.json");
-var crypto = Object.keys(cryptoData);
-crypto = crypto.map((item) => item + "usdc@miniTicker");
-
 export function WebSocketContextProvider(props) {
-    var coins = [];
-    const [binanceCoins, setBinanceCoins] = useState([]);
-    const [tempCoins, setTempCoins] = useState({});
+    const [binanceCoins, setBinanceCoins] = useState({});
+    const [binanceTradeValue, setBinanceTradeValue] = useState({});
     const [binancePassSocket, setBinancePassSocket] = useState(undefined);
+    const [binanceTradeSocket, setBinanceTradeSocket] = useState(undefined);
+    const currentCoin = useSelector((state) => state.data.coin);
+    const currentCurrency = useSelector((state) => state.data.currency);
 
-    const binanceSocketCall = async () => {
-        let conn = new WebSocket(
-            "wss://stream.binance.com:9443/ws/" + crypto.join("/")
+    const binanceSocketCall = async (code = "BTC/USDT") => {
+        var pair = currentCoin + currentCurrency;
+        pair = pair.toLowerCase();
+
+        var conn = new WebSocket(
+            "wss://stream.binance.com:9443/ws/" + pair + "@depth"
         );
         conn.onmessage = (evt) => {
-            var data = JSON.parse(evt.data);
-            function upsert(array, element) {
-                var currency = element.s
-                    .substring(element.s.length - 4)
-                    .toLowerCase();
-                var coin = element.s.slice(0, -4).toLowerCase();
-                var i = array.findIndex((_element) => _element.symbol === coin);
-                if (i > -1) {
-                    array[i].price = element.c;
-                    array[i].quantity = element.q;
-                } else
-                    array.push({
-                        symbol: coin,
-                        currency,
-                        price: element.c,
-                        quantity: element.q,
-                        image: cryptoData[coin],
-                    });
-            }
-            // console.log(data);
-            upsert(coins, data);
-            setTempCoins(data);
-            setBinanceCoins(coins);
+            var value = evt.data;
+            setBinanceCoins(JSON.parse(value));
         };
         conn.onerror = (evt) => {
             console.error("an error occurred", evt.data);
         };
+
         setBinancePassSocket(conn);
+    };
+
+    const binanceSocketClose = () => {
+        var conn = binancePassSocket;
+        conn.send(JSON.stringify({ method: "close" }));
+        console.log("ddd", conn);
+    };
+
+    const binanceTradeSocketCall = async (code = "BTC/USDT") => {
+        var pair = currentCoin + currentCurrency;
+        pair = pair.toLowerCase();
+
+        var conn = new WebSocket(
+            "wss://stream.binance.com:9443/ws/" + pair + "@trade"
+        );
+        setBinanceTradeSocket(conn);
+        conn.onmessage = (evt) => {
+            var value = evt.data;
+            setBinanceTradeValue(JSON.parse(value));
+        };
+        conn.onerror = (evt) => {
+            console.error("an error occurred", evt.data);
+        };
+    };
+
+    const binanceTradeSocketClose = () => {
+        var tdconn = binanceTradeSocket;
+        tdconn.send(JSON.stringify({ method: "close" }));
     };
 
     useEffect(() => {
         binanceSocketCall();
-        return () => {};
-    }, []);
-    // console.log(binanceCoins);
+        binanceTradeSocketCall();
+        return () => {
+            binanceSocketClose();
+            binanceTradeSocketClose();
+        };
+    }, [currentCoin, currentCurrency]);
+    // console.log(binanceTradeValue);
 
     return (
         <WebSocketContext.Provider
             value={{
                 binanceCoins,
                 binancePassSocket,
+                binanceSocketClose,
+                binanceTradeValue,
+                binanceTradeSocketCall,
+                binanceTradeSocketClose,
             }}
         >
             {props.children}

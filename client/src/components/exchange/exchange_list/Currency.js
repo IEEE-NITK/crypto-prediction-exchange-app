@@ -1,16 +1,12 @@
 import React, { useContext, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setCoin } from "../../../actions/currencyActions";
+import { setCoin, setCurrency } from "../../../actions/currencyActions";
 import { CoinContext } from "../Exchange";
 import "./Currency.css";
 
 const Currency = () => {
-    const coinContext = useContext(CoinContext);
-    const coin = useSelector((state) => state.coin);
-    // console.log(coin);
-    // const dispatch = useDispatch();
-    // dispatch(setCoin("eth"));
-    // console.log(coin);
+    const currentCurrency = useSelector((state) => state.data.currency);
+    const dispatch = useDispatch();
     return (
         <div className="currency-container">
             <div className="currency-button">
@@ -18,16 +14,9 @@ const Currency = () => {
                     className={"btn small-btn"}
                     style={{
                         backgroundColor:
-                            coinContext.activeCoin.currency === "USDT"
-                                ? "#2a2e39"
-                                : "",
+                            currentCurrency === "USDT" ? "#2a2e39" : "",
                     }}
-                    onClick={() =>
-                        coinContext.dispatchActiveCoin({
-                            type: "currency",
-                            value: "USDT",
-                        })
-                    }
+                    onClick={() => dispatch(setCurrency("USDT"))}
                 >
                     USDT
                 </button>
@@ -35,16 +24,9 @@ const Currency = () => {
                     className={"btn small-btn"}
                     style={{
                         backgroundColor:
-                            coinContext.activeCoin.currency === "INR"
-                                ? "#2a2e39"
-                                : "",
+                            currentCurrency === "INR" ? "#2a2e39" : "",
                     }}
-                    onClick={() =>
-                        coinContext.dispatchActiveCoin({
-                            type: "currency",
-                            value: "INR",
-                        })
-                    }
+                    onClick={() => dispatch(setCurrency("INR"))}
                 >
                     INR
                 </button>
@@ -52,16 +34,9 @@ const Currency = () => {
                     className={"btn small-btn"}
                     style={{
                         backgroundColor:
-                            coinContext.activeCoin.currency === "USD"
-                                ? "#2a2e39"
-                                : "",
+                            currentCurrency === "USD" ? "#2a2e39" : "",
                     }}
-                    onClick={() =>
-                        coinContext.dispatchActiveCoin({
-                            type: "currency",
-                            value: "USD",
-                        })
-                    }
+                    onClick={() => dispatch(setCurrency("USD"))}
                 >
                     USD
                 </button>
@@ -69,16 +44,9 @@ const Currency = () => {
                     className={"btn small-btn"}
                     style={{
                         backgroundColor:
-                            coinContext.activeCoin.currency === "BTC"
-                                ? "#2a2e39"
-                                : "",
+                            currentCurrency === "BTC" ? "#2a2e39" : "",
                     }}
-                    onClick={() =>
-                        coinContext.dispatchActiveCoin({
-                            type: "currency",
-                            value: "BTC",
-                        })
-                    }
+                    onClick={() => dispatch(setCurrency("BTC"))}
                 >
                     BTC
                 </button>
@@ -86,16 +54,9 @@ const Currency = () => {
                     className={"btn small-btn"}
                     style={{
                         backgroundColor:
-                            coinContext.activeCoin.currency === "ETH"
-                                ? "#2a2e39"
-                                : "",
+                            currentCurrency === "ETH" ? "#2a2e39" : "",
                     }}
-                    onClick={() =>
-                        coinContext.dispatchActiveCoin({
-                            type: "currency",
-                            value: "ETH",
-                        })
-                    }
+                    onClick={() => dispatch(setCurrency("ETH"))}
                 >
                     ETH
                 </button>
