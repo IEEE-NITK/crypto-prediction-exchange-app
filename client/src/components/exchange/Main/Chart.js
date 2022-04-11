@@ -1,11 +1,9 @@
 import React, { useContext } from "react";
 import { useSelector } from "react-redux";
 import { AdvancedChart } from "react-tradingview-embed";
-import { CoinContext } from "../Exchange";
 import "./Chart.css";
 
 const Chart = () => {
-    const coinContext = useContext(CoinContext);
     const currentCoin = useSelector((state) => state.data.coin);
     const currentCurrency = useSelector((state) => state.data.currency);
 

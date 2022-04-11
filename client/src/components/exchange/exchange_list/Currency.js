@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setCoin, setCurrency } from "../../../actions/currencyActions";
-import { CoinContext } from "../Exchange";
 import "./Currency.css";
 
 const Currency = () => {

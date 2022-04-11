@@ -8,11 +8,19 @@ const Orders = () => {
     return (
         <>
             <div className="orders-container">
-                <h1 style={{ color: "black" }}>Orders Executed</h1>
                 <TechAnalysisWidget />
                 <div className="buy-sell">
-                    <h1>{data}</h1>
-                    <button></button>
+                    <div
+                        className="buy-sell-navbar"
+                        style={{ display: "flex" }}
+                    >
+                        <div className="buy">
+                            <p>BUY</p>
+                        </div>
+                        <div className="sell">
+                            <p>SELL</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>

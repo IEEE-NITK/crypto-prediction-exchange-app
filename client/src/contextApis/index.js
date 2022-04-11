@@ -59,10 +59,7 @@ export function WebSocketContextProvider(props) {
     useEffect(() => {
         binanceSocketCall();
         binanceTradeSocketCall();
-        return () => {
-            binanceSocketClose();
-            binanceTradeSocketClose();
-        };
+        return () => {};
     }, [currentCoin, currentCurrency]);
     // console.log(binanceTradeValue);
 

@@ -9,7 +9,6 @@ const TradeCard = () => {
     const { binanceTradeValue } = useContext(WebSocketContext);
     tradeData.push(binanceTradeValue);
     sliceTradeData = tradeData.slice(-8);
-    console.log(sliceTradeData);
     return (
         <>
             {sliceTradeData !== undefined

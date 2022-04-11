@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { CoinContext } from "../Exchange";
 import CardList from "./CardList";
 import Currency from "./Currency";
 import "./CurrencyNav.css";
-// require("dotenv").config();
 
 const CurrencyNav = () => {
     const [input, setInput] = useState("");
