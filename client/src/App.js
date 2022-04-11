@@ -17,6 +17,8 @@ import News from "./components/news/News";
 import Ideas from "./components/ideas/Ideas";
 import Funds from "./components/funds/Funds";
 import { WebSocketContextProvider } from "./contextApis";
+import BuyCoin from "./components/exchange/orders/BuyCoin";
+import SellCoin from "./components/exchange/orders/SellCoin";
 
 function App() {
     return (
@@ -27,7 +29,10 @@ function App() {
                         <Router>
                             <NavBar />
                             <Routes>
-                                <Route exact path="/" element={<Exchange />} />
+                                <Route exact path="/" element={<Exchange />}>
+                                    <Route path="" element={<BuyCoin />} />
+                                    <Route path="sell" element={<SellCoin />} />
+                                </Route>
                                 <Route
                                     path="/screener"
                                     element={<Screener />}

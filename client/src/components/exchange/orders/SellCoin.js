@@ -1,4 +1,5 @@
 import React from "react";
+import "./Orders.css";
 
 const SellCoin = () => {
     return (
@@ -12,7 +13,7 @@ const SellCoin = () => {
             <div className="total-amount">
                 <p>OUTPUT AMOUNT</p>
             </div>
-            <div className="buy-sell-button">BUY</div>
+            <div className="buy-sell-btn">SELL</div>
         </>
     );
 };
