@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
+import "../screeners/Screener.css";
+import Holdings from "./Holdings";
 
 const Funds = () => {
     return (
-        <div>
-            Funds
-        </div>
-    )
-}
+        <>
+            <Holdings />
+        </>
+    );
+};
 
-export default Funds
+export default Funds;

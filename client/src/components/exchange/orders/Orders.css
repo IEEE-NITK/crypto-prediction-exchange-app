@@ -1,3 +1,59 @@
 .orders-container {
     padding-left: 20px;
+    padding-top: 20px;
+}
+
+.buy-sell {
+    padding: 20px;
+}
+
+.form {
+    padding: 5px;
+}
+
+.current-price {
+    width: 100%;
+}
+
+.amount {
+    display: flex;
+    align-items: center;
+}
+
+.qty-text {
+    display: flex;
+    justify-content: center;
+    padding-right: 15px;
+}
+
+.quantity {
+    border-radius: 7px;
+}
+
+.buy-sell-nav {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    margin-top: 20px;
+}
+
+.buy-btn {
+    background-color: rgb(0, 158, 0);
+    border-radius: 10px;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    font-weight: 500;
+}
+
+.buy-sell-btn {
+    margin: 5px;
+    border: 2px solid red;
+    border-radius: 5px;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
 }

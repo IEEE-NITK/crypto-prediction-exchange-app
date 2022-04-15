@@ -1,4 +1,11 @@
-.main-container{
+.main-container {
     width: 60%;
     padding: 25px 5px 5px 5px;
+}
+
+.books {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+    transition: 0.3s;
+    padding: 5px;
+    margin-top: 10px;
 }

@@ -1,15 +1,14 @@
 import React, { useState, useEffect, useContext } from "react";
-import { CoinContext } from "../Exchange";
+import { useDispatch, useSelector } from "react-redux";
 import CardList from "./CardList";
 import Currency from "./Currency";
 import "./CurrencyNav.css";
-// require("dotenv").config();
 
 const CurrencyNav = () => {
     const [input, setInput] = useState("");
     const [coins, setCoins] = useState([]);
-    const coinContext = useContext(CoinContext);
     const [order, setOrder] = useState("market_cap_desc");
+    const currentCurrency = useSelector((state) => state.data.currency);
     var axios = require("axios").default;
 
     const fetchData = () => {
@@ -17,7 +16,7 @@ const CurrencyNav = () => {
             method: "GET",
             url: "https://coingecko.p.rapidapi.com/coins/markets",
             params: {
-                vs_currency: `${coinContext.activeCoin.currency}`,
+                vs_currency: `${currentCurrency}`,
                 page: "1",
                 per_page: "100",
                 order: `${order}`,
@@ -55,7 +54,8 @@ const CurrencyNav = () => {
         }, 2000);
 
         return () => clearInterval(interval);
-    }, [coinContext.activeCoin.currency, order]);
+    }, [currentCurrency, order]);
+
     return (
         <>
             <div className="currency-nav">

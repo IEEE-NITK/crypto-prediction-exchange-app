@@ -25,9 +25,11 @@ A web application that allows users to view real-time prices for over 200 crypto
 
 ## Environment Variables
 
-To run this project, you will need to add the following environment variables to your .env file
+To run this project, you will need to add the following environment variables to your .env file in the client directory.
 
-`COINGECKO_API_KEY`
+Get the CoinGecko API key from [here](https://rapidapi.com/coingecko/api/coingecko/).
+
+For more info, refer [.env.example](./client/.env.example)
 
 ## Run Locally
 

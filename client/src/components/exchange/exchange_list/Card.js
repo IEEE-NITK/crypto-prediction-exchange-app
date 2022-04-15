@@ -1,25 +1,35 @@
 import React, { useContext } from "react";
-import { CoinContext } from "../Exchange";
+import { useDispatch, useSelector } from "react-redux";
+import { setCoin } from "../../../actions/currencyActions";
+import { WebSocketContext } from "../../../contextApis";
 import "./Card.css";
 
 const Card = (coin) => {
-    const coinContext = useContext(CoinContext);
+    const currentCoin = useSelector((state) => state.data.coin);
+    const currentCurrency = useSelector((state) => state.data.currency);
+    const dispatch = useDispatch();
+    const {
+        binanceSocketCall,
+        binanceSocketClose,
+        binanceTradeSocketCall,
+        binanceTradeSocketClose,
+    } = useContext(WebSocketContext);
     return (
         <div
             className="selected ticker-item"
             style={{
                 backgroundColor:
-                    coinContext.activeCoin.coin ===
-                    coin.coin.symbol.toUpperCase()
+                    currentCoin === coin.coin.symbol.toUpperCase()
                         ? "#192948"
                         : "",
             }}
-            onClick={() =>
-                coinContext.dispatchActiveCoin({
-                    type: "coin",
-                    value: coin.coin.symbol,
-                })
-            }
+            onClick={() => {
+                binanceSocketClose();
+                binanceTradeSocketClose();
+                dispatch(setCoin(coin.coin.symbol.toUpperCase()));
+                binanceSocketCall();
+                binanceTradeSocketCall();
+            }}
         >
             <div className="currency-logo">
                 <img src={coin.coin.image} className="logo"></img>
@@ -56,7 +66,7 @@ const Card = (coin) => {
                     <span className="price-text ticker-price">
                         <p>
                             {coin.coin.current_price}&nbsp;
-                            {coinContext.activeCoin.currency}
+                            {currentCurrency}
                         </p>
                     </span>
                 </div>

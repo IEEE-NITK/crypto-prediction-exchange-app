@@ -1,0 +1,9 @@
+export const SET_CURRENT_CURRENCY = "SET_CURRENT_CURRENCY";
+export const SET_CURRENT_COIN = "SET_CURRENT_COIN";
+export const GET_ERRORS = "GET_ERRORS";
+export const USER_LOADING = "USER_LOADING";
+export const SET_CURRENT_USER = "SET_CURRENT_USER";
+export const BUY_STOCK = "BUY_STOCK";
+export const SELL_STOCK = "SELL_STOCK";
+export const UPDATE_STOCKS = "UPDATE_STOCKS";
+export const SET_TICKER_COIN = "SET_TICKER_COIN";
