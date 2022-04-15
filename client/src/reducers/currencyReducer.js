@@ -1,8 +1,8 @@
 import { SET_CURRENT_COIN, SET_CURRENT_CURRENCY } from "../actions/types";
 
 const initialState = {
-    coin: "BTC",
-    currency: "USD",
+    coin: "ETH",
+    currency: "BTC",
 };
 
 export default function (state = initialState, action) {

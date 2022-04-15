@@ -5,12 +5,14 @@ export const WebSocketContext = createContext();
 export function WebSocketContextProvider(props) {
     const [binanceCoins, setBinanceCoins] = useState({});
     const [binanceTradeValue, setBinanceTradeValue] = useState({});
+    // const [binanceTickerValue, setBinanceTickerValue] = useState({});
     const [binancePassSocket, setBinancePassSocket] = useState(undefined);
     const [binanceTradeSocket, setBinanceTradeSocket] = useState(undefined);
+    // const [binanceTickerSocket, setBinanceTickerSocket] = useState(undefined);
     const currentCoin = useSelector((state) => state.data.coin);
     const currentCurrency = useSelector((state) => state.data.currency);
 
-    const binanceSocketCall = async (code = "BTC/USDT") => {
+    const binanceSocketCall = async () => {
         var pair = currentCoin + currentCurrency;
         pair = pair.toLowerCase();
 
@@ -34,7 +36,7 @@ export function WebSocketContextProvider(props) {
         console.log("ddd", conn);
     };
 
-    const binanceTradeSocketCall = async (code = "BTC/USDT") => {
+    const binanceTradeSocketCall = async () => {
         var pair = currentCoin + currentCurrency;
         pair = pair.toLowerCase();
 
@@ -56,9 +58,32 @@ export function WebSocketContextProvider(props) {
         tdconn.send(JSON.stringify({ method: "close" }));
     };
 
+    // const binanceTickerSocketCall = async () => {
+    //     var pair = currentCoin + "usdt";
+    //     pair = pair.toLowerCase();
+
+    //     var conn = new WebSocket(
+    //         "wss://stream.binance.com:9443/ws/" + pair + "@trade"
+    //     );
+    //     setBinanceTickerSocket(conn);
+    //     conn.onmessage = (evt) => {
+    //         var value = evt.data;
+    //         setBinanceTickerValue(JSON.parse(value));
+    //     };
+    //     conn.onerror = (evt) => {
+    //         console.error("an error occurred", evt.data);
+    //     };
+    // };
+
+    // const binanceTickerSocketClose = async () => {
+    //     var tdconn = binanceTickerSocket;
+    //     tdconn.send(JSON.stringify({ method: "close" }));
+    // };
+
     useEffect(() => {
         binanceSocketCall();
         binanceTradeSocketCall();
+        // binanceTickerSocketCall();
         return () => {};
     }, [currentCoin, currentCurrency]);
     // console.log(binanceTradeValue);
@@ -69,6 +94,7 @@ export function WebSocketContextProvider(props) {
                 binanceCoins,
                 binancePassSocket,
                 binanceSocketClose,
+                // binanceTickerValue,
                 binanceTradeValue,
                 binanceTradeSocketCall,
                 binanceTradeSocketClose,
