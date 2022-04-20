@@ -2,26 +2,34 @@
 
 -   A cryptocurrency price prediction & Exchange App
 
-A web application that allows users to view real-time prices for over 200 cryptocurrencies as well as conduct a pseudo-exchange. Users will be able to place false orders (orders without paying money) and see how much profit or loss they would have made if they had completed the trade. The webapp has a personal dashborad for each user to keep track of all the coins in their wallet. Furthermore, it provides indicators for each cryptocurrency backed by our LSTM models in order to forecast the best time to buy or sell the cryptocurrency.
+A web application that allows users to view real-time prices for over 200 cryptocurrencies as well as conduct a virtual/pseudo exchange. Users will be able to place false orders (orders without paying money) and see how much profit or loss they would have made if they had completed the trade. The webapp has a personal dashborad for each user to keep track of all the coins in their wallet. Furthermore, it provides indicators for each cryptocurrency backed by our LSTM models in order to forecast the best time to buy or sell the cryptocurrency.
 
 ## Features
 
 -   Live prices & charts of over 200 cryptocurrencies
 -   Buy/Sell indicators for each cryptocurrency built on LSTM model
--   Pseudo Exchange of crypto
+-   Virtual Exchange of crypto
 -   User authentication, user dashborad for keeping track of profit/loss
 
 ## Tech Stack
 
-**Client:** React, React SDK, TailwindCSS
+**Client:** React, Redux, TailwindCSS
 
-**Server:** Node, Express, MongoDB, Axios, Binance API, CoinGecko API, Trading View Carts
+**Server:** Node, Express, MongoDB, Axios, Binance API, CoinGecko API, Trading View Charts
 
 ## Screenshots
 
 #### Homepage
 
-![App Screenshot](./assets/img.png)
+![App Screenshot](./assets/crypto1.png)
+
+#### Screener
+
+![Screener Screenshot](./assets/crypto2.png)
+
+#### Funds
+
+![Funds Screenshot](./assets/crypto3.png)
 
 ## Environment Variables
 
