@@ -6,7 +6,7 @@ const Holdings = () => {
     return (
         <div className="screener">
             <div className="screener-title">
-                <h1>Crypto Screener</h1>
+                <h1>Funds</h1>
             </div>
             <div className="table">
                 <table className="screener-table czTsgW">
